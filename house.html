@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>ag-webpage</title>
+
+
+	<!-- include this in every page -->
+		<!-- JAVASCRIPT -->
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+
+
+	   <!--  getting film array -->
+	   <script type="text/javascript" src="js/films-array.js"></script>
+
+
+
+	    <!-- Jquery UI css -->
+	    <link rel="stylesheet" href="timeliner-master/jquery-ui-themes-1.12.1/themes/base/jquery-ui.css">
+ 		<!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+
+
+		<!-- CSS & BOOTSTRAP -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- custom css -->
+		<link rel="stylesheet" href="css/ag-webpage.css"/>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- include until this point -->
+
+	<!-- resources for the timeline -->
+		<link rel="stylesheet" href="css/timeliner.css" type="text/css" media="screen">
+<!-- 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+		<script type="text/javascript" src="js/timeliner.min.js"></script>
+
+
+	<!-- end of timeline resources -->
+
+	<!-- resources for the timeline -->
+		<!-- <link rel="stylesheet" href="css/timeliner.css" type="text/css" media="screen">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/timeliner.min.js"></script>
+ -->
+
+	<!-- end of timeline resources -->
+
+
+</head>
+<body>
+
+
+
+
+
+<!-- decide which film this page is about -->
+<script type="text/javascript"> var film  = films[4];</script>
+
+<nav></nav>
+
+
+
+<div class="jumbotron" id="filmBanner">
+  <h1 id= "filmBannerTitle"> </h1>
+  <!-- <p>...</p> -->
+  <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
+</div>
+
+
+
+
+
+
+
+
+<!-- collapsible accordion start  -->
+		
+
+		<div id="accordion" class="accordionTitle" >
+
+		  <h3>Summary</h3>
+
+		  <div>
+		    <p id='summary'></p>
+		  </div>
+
+		  <h3 id='directorName'></h3>
+
+		  <div>
+		    <p id='aboutDirector'></p>
+		  </div>
+
+		  <h3>Cast</h3>
+
+		  <div>
+		    <p id = 'cast'></p>
+		  </div>
+
+		</div>
+
+<!-- collapsible accordion end  -->
+
+<!-- TIMELINE -->
+
+	<div class="timelineSpot"></div>
+
+
+
+
+	<!-- getting stuff for smooth scroll -->
+	
+	<script type="text/javascript" src="js/smoothscroll.js"></script>
+
+
+
+	<!--     INSERT NAVBAR -->
+	<script type="text/javascript" src="js/nav.js"></script>
+
+
+	
+
+	<!--     INSERT TIMELINE -->
+	<script type="text/javascript" src="js/timeline.js"></script>
+
+
+
+
+	<!-- custom script -->
+	<script type="text/javascript" src="js/ag-webpage.js"></script>
+
+</body>
+
+
+
+
+
+
+
