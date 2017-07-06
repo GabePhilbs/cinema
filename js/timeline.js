@@ -115,18 +115,18 @@ function calltimeline(){
 
 		//                 timeline +='</dl>'
 		//         timeline +='</div>'
-		//         timeline +='<div class="timeline-wrapper">'
-		//                 timeline +="<h2 class='timeline-time'>2010's</h2>"
+		        timeline +='<div class="timeline-wrapper">'
+		                timeline +="<h2 class='timeline-time'>2010's</h2>"
 
-		//                 timeline +='<dl class="timeline-series">'
+		                timeline +='<dl class="timeline-series">'
 
-		//                         timeline +='<dt class="timeline-event" id="event03"><a href="#pageTop" class = " smoothScroll timelineLink">Outrage</a></dt>'
-		//                         timeline +='<dd class="timeline-event-content" id="event03EX">'
-		//                                 timeline +='<p>Content about the event goes here.</p>'
-		//                         timeline +='</dd>'
+		                        timeline +='<dt class="timeline-event" id="event03"><a href="#pageTop" class = " smoothScroll timelineLink">Outrage</a></dt>'
+		                        timeline +='<dd class="timeline-event-content" id="event03EX">'
+		                                timeline +='<p>Content about the event goes here.</p>'
+		                        timeline +='</dd>'
 
-		//                 timeline +='</dl>'
-		//         timeline +='</div>'
+		                timeline +='</dl>'
+		        timeline +='</div>'
 		//     timeline +='<br class="clear">'
 		timeline +='</div>'
 
@@ -157,7 +157,7 @@ $.get("http://localhost:8080/films", function(data){
 		var n = dec.toString();
 		//crete content to input
 		var insert =''
-	insert +='<dt class="timeline-event" id="event03"><a href="#pageTop" class = "smoothScroll timelineLink">' + films[i].name + '</a></dt>'
+	insert +='<dt class="timeline-event" id="event03"><a href="#pageTop" class="smoothScroll timelineLink">' + films[i].name + '</a></dt>'
         insert +='<dd class="timeline-event-content" id="event01EX">'
                insert +=' <p>Content about the event goes here.</p>'
        insert +=' </dd>'
@@ -168,6 +168,8 @@ $.get("http://localhost:8080/films", function(data){
        //append to right decade
        $('.'+ dec).append(insert);
        }
+       //href="#pageTop"
+       //smoothScroll 
 
 });
 			
@@ -175,16 +177,17 @@ $.get("http://localhost:8080/films", function(data){
 
  	
 $('.timelineLink').click(function(){
+	console.log('helllo');
 		    filmTitle =($(this).text());
 
 		    //test if this thing is working so far
 		    console.log(filmTitle);
 
 		    //test if the var films is loaded
-		    console.log(films);
+		    console.log("FILMS:",films);
 
 		    //grep gives an array, so I need to obtain the first element of it
-		    
+
 		    var tempArray = $.grep( films, function(rightFilm) {
   				// testing if the array films loads here
   				//console.log(films);
