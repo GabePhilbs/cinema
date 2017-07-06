@@ -215,6 +215,7 @@ $.get("http://localhost:8080/films", function(data){
 
 		  });
 
+       //smooth scroll was not running so I called it from here
        runSmoothScroll();
 
 });
