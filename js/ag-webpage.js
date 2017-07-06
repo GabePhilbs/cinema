@@ -18,8 +18,8 @@ function insertContent(){
 			"url('"+film.img+"')"
 		}
 		);
-	console.log(film.name);
-	console.log(film.img);
+	// console.log(film.name);
+	// console.log(film.img);
 	
 
 

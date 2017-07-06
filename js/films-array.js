@@ -1,4 +1,4 @@
-
+// This file is no longer used. Its contents have beenmoved to the server
 
 var directors =[
 

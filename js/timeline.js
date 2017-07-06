@@ -1,6 +1,11 @@
+console.log('Geronimo!!! (calltimeline has been called)');
+
 function calltimeline(){    
 	
-
+	//test if this function is getting called
+	console.log('Geronimo!!! (calltimeline has been called)');
+	//test if films is being loaded
+	console.log(films);
 
 	var timeline = '<!-- beginning of the navbar block -->'
 
@@ -11,13 +16,16 @@ function calltimeline(){
 		       timeline +="<h2 class='timeline-time'>1930's</h2>"
 
 		             timeline +='<dl class="timeline-series">'
+		          
+						 	
+					   
 
-		                        timeline +='<dt class="timeline-event" id="event03"><a href="#pageTop" class = "smoothScroll timelineLink">I Was Born, But...</a></dt>'
-		                        timeline +='<dd class="timeline-event-content" id="event01EX">'
-		                               timeline +=' <p>Content about the event goes here.</p>'
-		                       timeline +=' </dd>'
-
-		                        
+				             		timeline +='<dt class="timeline-event" id="event03"><a href="#pageTop" class = "smoothScroll timelineLink">' + 'I Was Born, But...' + '</a></dt>'
+				                        timeline +='<dd class="timeline-event-content" id="event01EX">'
+				                               timeline +=' <p>Content about the event goes here.</p>'
+				                       timeline +=' </dd>'
+				               
+						                  
 
 		                timeline +='</dl>'
 		        timeline +='</div>'
@@ -140,15 +148,21 @@ $('.timelineLink').click(function(){
 		    filmTitle =($(this).text());
 
 		    //test if this thing is working so far
-		    console.log(filmTitle);
+		    // console.log(filmTitle);
+
+		    //test if the var films is loaded
+		    // console.log(films);
 
 		    //grep gives an array, so I need to obtain the first element of it
 
 		    var tempArray = $.grep( films, function(rightFilm) {
+  				// testing if the array films loads here
+  				//console.log(films);
   				return rightFilm.name == filmTitle;
+
 			});
 		    //see if the right film is being retrieved
-		    // console.log(tempArray);
+		    //  console.log(tempArray);
 		    // console.log(tempArray[0]);
 
 		    // switch content to selected film

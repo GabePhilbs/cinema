@@ -128,7 +128,7 @@ function callHome(){
 
 if(film == 1){
 	$('#bodySpot').html(callHome());
-	console.log(callHome())
+	//console.log(callHome())
 }
 
 
@@ -181,10 +181,10 @@ return filmBody;
 function loadBody(){
 	if(film == 1){
 		$('#bodySpot').html(callHome());
-		console.log(callHome())
+		//console.log(callHome())
 	}else {
 		$('#bodySpot').html(callFilm());
-		console.log(callFilm())
+		//console.log(callFilm())
 	}
 
 }
