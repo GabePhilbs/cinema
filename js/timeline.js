@@ -215,6 +215,7 @@ $.get("http://localhost:8080/films", function(data){
 
 		  });
 
+       runSmoothScroll();
 
 });
 			
