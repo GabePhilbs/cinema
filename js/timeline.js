@@ -17,14 +17,12 @@ function calltimeline(){
 			for(var i =1930; i <= 2010; i+=10){
 				var n = i.toString();
 		       timeline +=' <div class="timeline-wrapper">'
-		       timeline +="<h2 class='timeline-time '>"+ i +"</h2>"
+		       timeline +="<h2 class='timeline-time '>"+ i +"'s</h2>"
 
 		             timeline +='<dl class="timeline-series '+ n +'">'
-		          
-						 	
-					   
-
-    			               
+		          	
+		          	
+   			               
 						                  
 
 		                timeline +='</dl>'
@@ -164,7 +162,7 @@ $.get("http://localhost:8080/films", function(data){
                insert +=' <p>Content about the event goes here.</p>'
        insert +=' </dd>'
 
-       console.log(n);
+       // console.log(n);
        // console.log(insert);
        // console.log(films[i].name);
        //append to right decade
@@ -180,13 +178,13 @@ $('.timelineLink').click(function(){
 		    filmTitle =($(this).text());
 
 		    //test if this thing is working so far
-		    // console.log(filmTitle);
+		    console.log(filmTitle);
 
 		    //test if the var films is loaded
-		    // console.log(films);
+		    console.log(films);
 
 		    //grep gives an array, so I need to obtain the first element of it
-
+		    
 		    var tempArray = $.grep( films, function(rightFilm) {
   				// testing if the array films loads here
   				//console.log(films);

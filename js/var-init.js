@@ -4,9 +4,9 @@
 	 function loadDirectors(){
 		
 	 	function setDirectors(data){
-	 		console.log(data);
+	 		// console.log(data);
 	 		directors = data;
-	 		console.log(directors);
+	 		// console.log(directors);
 	 	}
 
 
@@ -14,7 +14,7 @@
 		function(data)
 		{ 
 		 
-		 console.log(data);
+		 // console.log(data);
 
 		 setDirectors(data);
 		 return data;
@@ -27,15 +27,15 @@
 
 	  // var directors = loadDirectors();
 	  loadDirectors();
-	 console.log(directors);
+	 // console.log(directors);
 
 
 	 var films =[];
 	 function loadFilms(){
-	 	$.get("http://localhost:8080/films", function(data){  films = data; console.log(films); return data;});
+	 	$.get("http://localhost:8080/films", function(data){  films = data;  return data;});
 			 //console.log(films);
-			 console.log('following up, films as loaded in var-init')
-			 console.log(films);
+			 // console.log('following up, films as loaded in var-init')
+			 // console.log(films);
 	}
 	  
 	  loadFilms();
