@@ -235,7 +235,9 @@ div .timeline{
 }
 
 form{
-	
+	display: block;
+	padding:20px;
+	text-align: center;
 
 }
 
@@ -243,6 +245,36 @@ form{
 	margin-top: 50px;
 	margin-left: 100px;
 	background-color: white;
+
+}
+select {
+	margin-top: 20px;
+	margin-bottom:20px;
+
+}
+
+form p{
+	display: block;
+	clear:both;
+
+}
+
+
+form textarea{
+	display: block;
+	clear:both;
+	float:center;
+
+}
+
+form div{
+	display: block;
+	clear:both;
+}
+
+form button{
+	display: block;
+	clear:both;
 
 }
 

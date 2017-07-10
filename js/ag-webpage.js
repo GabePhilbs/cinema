@@ -178,14 +178,20 @@ $('#addFilmButton').click(function(){
 		// console.log($('#decadeSelect').val());
 		// console.log(filmFromForm);
 
-			$('#filmName').val('') ,
-			$('#summaryField').val('') ,
-			$('#castField').val(''),
-			$('#directorSelect').val('') ,
-			$('#imgLink').val('') ,
-			$('#decadeSelect').val('') 
+			$('#filmName').val('');
+			$('#summaryField').val('');
+			$('#castField').val('');
+			$('#directorSelect').val('');
+			$('#imgLink').val('');
+			$('#decadeSelect').val(''); 
 
 			console.log(filmFromForm);
+
+
+			$.post("", function( filmFromForm ) {
+  			$( ".result" ).html( data );
+
+			});
 		
 	}
 );

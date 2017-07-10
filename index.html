@@ -115,8 +115,9 @@
 		        <div class=row><input id='directorName' name='directorName' placeholder='Name'></div>
 
 
-				<div class=row><input id='about' name='about' placeholder='About this director'></div>
+				<!-- <div class=row><input id='about' name='about' placeholder='About this director'></div> -->
 
+				<textarea id = 'about' name='about' placeholder='About this director'></textarea>
 
 				<button type="button" id='addDirectorButton'>Add director</button>
 
@@ -170,10 +171,13 @@
 				<!-- name is how the infromation will be identidfied when you get data from the form -->
 		        <select name="directorsSelect" class="directorSelectList">
 					<option value="" selected="selected">Director</option>
-
-					
+			
   				</select>
+
 				
+				<p>and/or</p>
+				
+
 				<select name="filmSelect" class="filmSelectList">
 					<option value="" selected="selected">Film</option>
 
