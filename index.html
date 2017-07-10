@@ -127,7 +127,7 @@
 			<form id='newFilm' method='post' action='#' onsubmit="checkMyForm(); return false;">
 
 				<h3>New Film</h3>
-				<select name="directorsSelect" class="directorSelectList">
+				<select id = "directorSelect" name="directorsSelect" class="directorSelectList">
 					<option value="" selected="selected">Director</option>
 
 					<!-- <div class="directorSelectList"></div> -->
@@ -138,11 +138,11 @@
 				<!-- name is how the infromation will be identidfied when you get data from the form -->
 		        <div class=row><input id='filmName' name='filmName' placeholder='Name'></div>
 
-		        <textarea name="summaryField" form="newFilm" placeholder='Write a summary for this film'></textarea>
+		        <textarea id = "summaryField" name="summaryField" form="newFilm" placeholder='Write a summary for this film'></textarea>
 
-		        <textarea name="summaryField" form="newFilm" placeholder='cast'></textarea>
+		        <textarea id="castField" name="castField" form="newFilm" placeholder='Cast'></textarea>
 				
-				<select name="decadeSelect">
+				<select id= "decadeSelect" name="decadeSelect">
 					<option value="" disabled selected>Decade</option>
 					<option value="1930">1930's</option> 
 					<option value="1940">1940's</option> 

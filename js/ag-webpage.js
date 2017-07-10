@@ -79,7 +79,7 @@ function loadDirectorsSelect(){
 			var dirList ='';
 			// console.log(dirList);
 			for(var i = 0; i < directors.length; i++){
-				dirList += "<option value='" + i + "'>" + directors[i].name + "</option>";
+				dirList += "<option value=" + i + ">" + directors[i].name + "</option>";
 
 			}
 			$('.directorSelectList').append(dirList);
@@ -90,7 +90,7 @@ function loadfilmSelect(){
 			var filmList ='';
 			// console.log(dirList);
 			for(var i = 0; i < films.length; i++){
-				filmList += "<option value='" + i + "'>" + films[i].name + "</option>";
+				filmList += "<option value=" + i + ">" + films[i].name + "</option>";
 
 			}
 			$('.filmSelectList').append(filmList);
@@ -110,7 +110,7 @@ function loadFilmForm(){
 $.get("http://localhost:8080/directors",
 		function(data)
 		{ 
-		 	 var directors = data;
+		 	 directors = data;
 		// console.log(directors);
 		
 
@@ -122,7 +122,7 @@ function loadDeleteLists(){
 $.get("http://localhost:8080/directors",
 		function(data)
 		{ 
-		 	 var directors = data;
+		 	directors = data;
 		// console.log(directors);
 		
 
@@ -145,24 +145,67 @@ $.get("http://localhost:8080/films",
 
 loadDeleteLists();
 
-function getNewFilm(){
+// function getNewFilm(){
 
-	var filmFromForm ={
-	name: $('filmName') ,
-	summary: $('summaryField'),
-	cast: $(''),
-	director: directors[$('')],
-	img: $(''),
-	decade:$('')
-	} 
+// 	var filmFromForm ={
+// 	name: $('filmName') ,
+// 	summary: $('summaryField'),
+// 	cast: $(''),
+// 	director: directors[$('')],
+// 	img: $(''),
+// 	decade:$('')
+// 	} 
 
-};
+// 	console.log(filmFromForm);
+// };
 
 
 
 
-$('addFilmButtton').click(getNewFilm());
+$('#addFilmButton').click(function(){
+	// var bla = $('#filmName').val();
+	console.log("button clicked");
+	
+		var filmFromForm ={
+			name: $('#filmName').val() ,
+			summary: $('#summaryField').val() ,
+			cast: $('#castField').val(),
+			director: $('#directorSelect').val() ,
+			img: $('#imgLink').val() ,
+			decade: $('#decadeSelect').val() 
+			} 
 
+		// console.log($('#decadeSelect').val());
+		// console.log(filmFromForm);
+
+			$('#filmName').val('') ,
+			$('#summaryField').val('') ,
+			$('#castField').val(''),
+			$('#directorSelect').val('') ,
+			$('#imgLink').val('') ,
+			$('#decadeSelect').val('') 
+
+			console.log(filmFromForm);
+		
+	}
+);
+
+$('#addDirectorButton').click(function(){
+	// var bla = $('#filmName').val();
+	console.log("button clicked");
+	
+		var directorFromForm ={
+			name: $('#directorName').val() ,
+			about: $('#about').val() ,
+			} 
+
+			$('#directorName').val('') ,
+			$('#about').val('') ,
+		console.log(directorFromForm);
+
+		
+	}
+);
 
 
 
