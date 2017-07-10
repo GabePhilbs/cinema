@@ -32,8 +32,12 @@
 
 	 var films =[];
 	 function loadFilms(){
-	 	$.get("http://localhost:8080/films", function(data){  films = data;  return data;});
-			 //console.log(films);
+	 	$.get("http://localhost:8080/films", function(data){  
+	 		films = data; 
+	 		//console.log(films);	 		
+	 		return data;
+	 	});
+			 // console.log(films);
 			 // console.log('following up, films as loaded in var-init')
 			 // console.log(films);
 	}

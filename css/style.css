@@ -210,7 +210,75 @@ body {
 
 div .timeline{
 	width: 100%;
+	
+	
+
+}
+
+.timelineSpot{
+	margin-bottom: 50px;
+
 }
 
 
+
+
+#dropdownMenu1{
+	border:5px solid black;
+}
+
+
+/*forms style*/
+.warning{ 
+	border: 1px solid red; 
+	background-color: purple;  
+}
+
+form{
+	display: block;
+	padding:20px;
+	text-align: center;
+
+}
+
+.formContainer{
+	margin-top: 50px;
+	margin-left: 100px;
+	background-color: white;
+
+}
+select {
+	margin-top: 20px;
+	margin-bottom:20px;
+
+}
+
+form p{
+	display: block;
+	clear:both;
+
+}
+
+
+form textarea{
+	display: block;
+	clear:both;
+	float:center;
+
+}
+
+form div{
+	display: block;
+	clear:both;
+}
+
+form button{
+	display: block;
+	clear:both;
+
+}
+
+/*#formHolder{
+	display: hidden;
+}*/
 

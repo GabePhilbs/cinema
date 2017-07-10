@@ -98,23 +98,24 @@ function callHome(){
 			homeBody +='<!--START JUMBOTRON -->'
 
 
-	           // homeBody +=' <div class="jumbotron" id="main-jumbo">'
-	           // homeBody +=' <div class="container" id="sign-up">'
-	                
-	           //      homeBody +='<!-- <p hover class="btn btn-primary btn-md btn-style" role="button">sign-up</p> -->'
-	           //      homeBody +='<div class="dropdown">'
-	           //           homeBody +=' <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
-	           //          homeBody +='subscribe'
-	           //           homeBody +='   <span class="caret"></span>'
-	           //            homeBody +='</button>'
-	           //            homeBody +='<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">'
-	           //              homeBody +='<li><a href="#">sign up</a></li>'
-	           //              homeBody +='<li><a href="#">newsletter</a></li>'
-	           //              homeBody +='<li><a href="#">blog</a></li>'
-	           //            homeBody +='</ul>'
-	           //      homeBody +='</div>'
+	           homeBody +=' <div class="jumbotron" id="main-jumbo">'
+	           homeBody +=' <div class="container" id="sign-up">'
 
-	           //  homeBody +='</div>'
+	                // include dropdown button
+	                homeBody +='<!-- <p hover class="btn btn-primary btn-md btn-style" role="button">sign-up</p> -->'
+	                homeBody +='<div class="dropdown">'
+	                     homeBody +=' <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
+	                    homeBody +='EDIT FILM LIST'
+	                     homeBody +='   <span class="caret"></span>'
+	                      homeBody +='</button>'
+	                      homeBody +='<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">'
+	                        homeBody +='<li><a id="addDirector">Add Director</a></li>'
+	                        homeBody +='<li><a id="addFilm">Add Film</a></li>'
+	                        homeBody +='<li><a id="remove">Remove Film or Director</a></li>'
+	                      homeBody +='</ul>'
+	                homeBody +='</div>'
+	                homeBody +='<div id="formSpot"></div>'
+	            homeBody +='</div>'
 	        homeBody +='</div>'
 
 
