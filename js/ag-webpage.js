@@ -82,7 +82,7 @@ function loadDirectorsSelect(){
 				dirList += "<option value=" + i + ">" + directors[i].name + "</option>";
 
 			}
-			$('.directorSelectList').append(dirList);
+			$('.directorSelectList').html(dirList);
 			// console.log(dirList);
 		};
 
@@ -93,7 +93,7 @@ function loadfilmSelect(){
 				filmList += "<option value=" + i + ">" + films[i].name + "</option>";
 
 			}
-			$('.filmSelectList').append(filmList);
+			$('.filmSelectList').html(filmList);
 			// console.log(filmList);
 		};
 
@@ -119,27 +119,27 @@ $.get("http://localhost:8080/directors",
 );
 
 function loadDeleteLists(){
-$.get("http://localhost:8080/directors",
-		function(data)
-		{ 
-		 	directors = data;
-		// console.log(directors);
-		
+	$.get("http://localhost:8080/directors",
+			function(data)
+			{ 
+			 	directors = data;
+			// console.log(directors);
+			
 
-		loadDirectorsSelect();
-}
-);
+			loadDirectorsSelect();
+	}
+	);
 
-$.get("http://localhost:8080/films",
-		function(data)
-		{ 
-		 	 var films = data;
-			// console.log(films);
-		
+	$.get("http://localhost:8080/films",
+			function(data)
+			{ 
+			 	 var films = data;
+				// console.log(films);
+			
 
-		loadfilmSelect();
-}
-);
+			loadfilmSelect();
+	}
+	);
 
 };
 
@@ -188,10 +188,10 @@ $('#addFilmButton').click(function(){
 			console.log(filmFromForm);
 
 
-			$.post("", function( filmFromForm ) {
-  			$( ".result" ).html( data );
+			// $.post("", function( filmFromForm ) {
+  			// 		$( ".result" ).html( data );
 
-			});
+			// });
 		
 	}
 );
