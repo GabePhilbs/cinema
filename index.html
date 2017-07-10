@@ -20,7 +20,7 @@
 		<!-- CSS & BOOTSTRAP -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<!-- custom css -->
-		<link rel="stylesheet" href="css/ag-webpage.css"/>
+		<link rel="stylesheet" href="css/style.css"/>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- include until this point -->
@@ -78,7 +78,7 @@
 			<!-- ANCHOR TO TIMELINE -->
 			<a name="timeline"></a>
 			<!--CALL TIMELINE FROM OTHER FILE -->
-			<div class="timelineSpot"></div>
+			<div class="timelineSpot col-xs-12"></div>
 
 
 
@@ -102,6 +102,94 @@
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZMD7ZXsTsa-GRkCGeN5CskFAZPuwNtiw&callback=myMap"></script>
 	</div>
 	<!-- GOOGLE MAPS END-->
+
+
+
+	<div id="formHolder">
+		<div class ="formContainer" id='deleteCont'>
+
+			<form id='newDirector' method='post' action='#' onsubmit="checkMyForm(); return false;">
+
+				<h3>New Director</h3>
+				<!-- name is how the infromation will be identidfied when you get data from the form -->
+		        <div class=row><input id='directorName' name='directorName' placeholder='Name'></div>
+
+
+				<div class=row><input id='about' name='about' placeholder='About this director'></div>
+
+
+				<button type="button" id='addDirectorButton'>Add director</button>
+
+			</form>
+		</div>
+
+		<div class ="formContainer " id='newFilmCont'>
+			<form id='newFilm' method='post' action='#' onsubmit="checkMyForm(); return false;">
+
+				<h3>New Film</h3>
+				<select name="directorsSelect" class="directorSelectList">
+					<option value="" selected="selected">Director</option>
+
+					<!-- <div class="directorSelectList"></div> -->
+  				</select>
+
+
+
+				<!-- name is how the infromation will be identidfied when you get data from the form -->
+		        <div class=row><input id='filmName' name='filmName' placeholder='Name'></div>
+
+		        <textarea name="summaryField" form="newFilm" placeholder='Write a summary for this film'></textarea>
+
+		        <textarea name="summaryField" form="newFilm" placeholder='cast'></textarea>
+				
+				<select name="decadeSelect">
+					<option value="" disabled selected>Decade</option>
+					<option value="1930">1930's</option> 
+					<option value="1940">1940's</option> 
+					<option value="1950">1950's</option> 
+					<option value="1960">1960's</option> 
+					<option value="1970">1970's</option> 
+					<option value="1980">1980's</option>
+					<option value="1990">1990's</option> 
+					<option value="2000">2000's</option> 
+					<option value="2010">2010's</option> 				
+  				</select>
+				
+  				<div class=row><input id='imgLink' name='imgLink' placeholder='Image Link'></div>
+
+
+				<button type="button" id='addFilmButton'>Add Film</button>
+
+			</form>
+		</div>
+
+		<div class ="formContainer" id='deleteCont'>
+			<form id='delete' method='post' action='#' onsubmit="checkMyForm(); return false;">
+
+				<h3>Delete Film or Director</h3>
+				<!-- name is how the infromation will be identidfied when you get data from the form -->
+		        <select name="directorsSelect" class="directorSelectList">
+					<option value="" selected="selected">Director</option>
+
+					
+  				</select>
+				
+				<select name="filmSelect" class="filmSelectList">
+					<option value="" selected="selected">Film</option>
+
+					
+  				</select>
+
+
+				<button type="button" id='deleteButton'>Delete</button>
+
+			</form>
+
+	</div>
+
+
+
+
 
 
 

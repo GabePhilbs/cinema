@@ -31,105 +31,7 @@ function calltimeline(){
 
 
 
-		//         timeline +='<div class="timeline-wrapper">'
-		//                 timeline +="<h2 class='timeline-time time-forty'>1940's</h2>"
-
-		//                 timeline +='<dl class="timeline-series">'
-
-		//                         timeline +='<dt class="timeline-event" id="event03"><a href="#pageTop" class = "smoothScroll timelineLink">Nora Inu</a></dt>'
-		//                         timeline +='<dd class="timeline-event-content" id="event03EX">'
-		//                                 timeline +='<p>Content about the event goes here.</p>'
-		//                        timeline +=' </dd>'
-
-		//                 timeline +='</dl>'
-		//         timeline +='</div>'
-		//         timeline +='<div class="timeline-wrapper">'
-		//                 timeline +="<h2 class='timeline-time time-fifty'>1950's</h2>"
-
-		//                 timeline +='<dl class="timeline-series">'
-
-		//                         timeline +='<dt class="timeline-event" id="event03"><a href="#pageTop" class = "smoothScroll timelineLink">Gojira</a></dt>'
-		//                         timeline +='<dd class="timeline-event-content" id="event03EX">'
-		//                                 timeline +='<p>Content about the event goes here.</p>'
-		//                         timeline +='</dd>'
-
-		//                 timeline +='</dl>'
-		//         timeline +='</div>'
-		//         timeline +='<div class="timeline-wrapper">'
-		//                 timeline +="<h2 class='timeline-time time-sixty'>1960's</h2>"
-
-		//                 timeline +='<dl class="timeline-series">'
-
-		//                         timeline +='<dt class="timeline-event" id="event03"><a href="#pageTop" class = "smoothScroll timelineLink">Tokyo Drifter</a></dt>'
-		//                         timeline +='<dd class="timeline-event-content" id="event03EX">'
-		//                                 timeline +='<p>Content about the event goes here.</p>'
-		//                         timeline +='</dd>'
-
-		//                 timeline +='</dl>'
-		//         timeline +='</div>'
-		//         timeline +='<div class="timeline-wrapper">'
-		//                 timeline +="<h2 class='timeline-time'>1970's</h2>"
-
-		//                 timeline +='<dl class="timeline-series">'
-
-		//                         timeline +='<dt class="timeline-event" id="event03"><a href="#pageTop" class = "smoothScroll timelineLink">House</a></dt>'
-		//                         timeline +='<dd class="timeline-event-content" id="event03EX">'
-		//                                 timeline +='<p>Content about the event goes here.</p>'
-		//                         timeline +='</dd>'
-
-		//                 timeline +='</dl>'
-		//         timeline +='</div>'
-		//         timeline +='<div class="timeline-wrapper">'
-		//                 timeline +="<h2 class='timeline-time'>1980's</h2>"
-
-		//                 timeline +='<dl class="timeline-series">'
-
-		//                         timeline +='<dt class="timeline-event" id="event03"><a href="#pageTop" class = "smoothScroll timelineLink">Tampopo Juzo Itami</a></dt>'
-		//                         timeline +='<dd class="timeline-event-content" id="event03EX">'
-		//                                 timeline +='<p>Content about the event goes here.</p>'
-		//                         timeline +='</dd>'
-
-		//                 timeline +='</dl>'
-		//         timeline +='</div>'
-		//         timeline +='<div class="timeline-wrapper">'
-		//                timeline +="<h2 class='timeline-time'>1990's</h2>"
-
-		//                 timeline +='<dl class="timeline-series">'
-
-		//                         timeline +='<dt class="timeline-event" id="event03"><a href="#pageTop" class = "smoothScroll timelineLink">Rainy Dog</a></dt>'
-		//                        timeline +=' <dd class="timeline-event-content" id="event03EX">'
-		//                                timeline +=' <p>Content about the event goes here.</p>'
-		//                        timeline +=' </dd>'
-
-		//                 timeline +='</dl>'
-		//         timeline +='</div>'
-		//         timeline +='<div class="timeline-wrapper">'
-		//                 timeline +="<h2 class='timeline-time'>2000's</h2>"
-
-		//                 timeline +='<dl class="timeline-series">'
-
-		//                         timeline +='<dt class="timeline-event" id="event03"><a href="#pageTop" class = "smoothScroll timelineLink">Spirited Away</a></dt>'
-		//                         timeline +='<dd class="timeline-event-content" id="event03EX">'
-		//                                 timeline +='<p>Content about the event goes here.</p>'
-		//                         timeline +='</dd>'
-
-		//                 timeline +='</dl>'
-		//         timeline +='</div>'
-		//         timeline +='<div class="timeline-wrapper">'
-		//                 timeline +="<h2 class='timeline-time'>2010's</h2>"
-
-		//                 timeline +='<dl class="timeline-series">'
-
-		//                         timeline +='<dt class="timeline-event" id="event03"><a href="#pageTop" class = " smoothScroll timelineLink">Outrage</a></dt>'
-		//                         timeline +='<dd class="timeline-event-content" id="event03EX">'
-		//                                 timeline +='<p>Content about the event goes here.</p>'
-		//                         timeline +='</dd>'
-
-		//                 timeline +='</dl>'
-		//         timeline +='</div>'
-		// //     timeline +='<br class="clear">'
-		// timeline +='</div>'
-
+		
 
 
 
@@ -175,14 +77,14 @@ $.get("http://localhost:8080/films", function(data){
        // I moved the click function here, so it loads after ajax
        // otherwise the anchor would not load
        $('.timelineLink').click(function(){
-			console.log('helllo');
+			// console.log('helllo');
 		    filmTitle =($(this).text());
 
 		    //test if this thing is working so far
-		    console.log(filmTitle);
+		    // console.log(filmTitle);
 
 		    //test if the var films is loaded
-		    console.log("FILMS:",films);
+		    // console.log("FILMS:",films);
 
 		    //grep gives an array, so I need to obtain the first element of it
 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<link rel= "stylesheet" type="text/css" href="css/style.css"/>
+
+		<title></title>
+
+
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+	</head>
+	<body>
+
+		<div class ="formContainer">
+
+			<form id='newDirector' method='post' action='#' onsubmit="checkMyForm(); return false;">
+
+				<h3>New Director</h3>
+				<!-- name is how the infromation will be identidfied when you get data from the form -->
+		        <div class=row><input id='directorName' name='directorName' placeholder='Name'></div>
+
+
+				<div class=row><input id='about' name='about' placeholder='About this director'></div>
+
+
+				<div class='row'><input type=submit  value='Submit Me!' />
+
+			</form>
+		</div>
+
+		<div class ="formContainer">
+			<form id='newFilm' method='post' action='#' onsubmit="checkMyForm(); return false;">
+
+				<h3>New Film</h3>
+				<!-- name is how the infromation will be identidfied when you get data from the form -->
+		        <div class=row><input id='filmName' name='filmName' placeholder='Name'></div>
+
+
+				<div class=row><input id='summaryField' name='ummaryField' placeholder='Summary'></div>
+
+				
+				<select name="DirectorsSlect" placeholder='Director'>
+					<div id="directorSelect"></div>
+  				</select>
+				
+
+
+				<div class='row'><input type=submit  value='Submit Me!' />
+
+			</form>
+		</div>
+
+		<div class ="formContainer">
+			<form id='delete' method='post' action='#' onsubmit="checkMyForm(); return false;">
+
+				<h3>Delete Film or Director</h3>
+				<!-- name is how the infromation will be identidfied when you get data from the form -->
+		        <div class=row><input id='filmName' name='filmName' placeholder='Film Name'></div>
+
+
+				<div class=row><input id='lastName' name='lastName' placeholder='Last Name'></div>
+
+
+				<div class='row'><input type=submit  value='Submit Me!' />
+
+			</form>
+		</div>
+
+	</body>
+	<script src = 'js/javascript.js'></script>
+
+</html>

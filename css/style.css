@@ -210,7 +210,43 @@ body {
 
 div .timeline{
 	width: 100%;
+	
+	
+
+}
+
+.timelineSpot{
+	margin-bottom: 50px;
+
 }
 
 
+
+
+#dropdownMenu1{
+	border:5px solid black;
+}
+
+
+/*forms style*/
+.warning{ 
+	border: 1px solid red; 
+	background-color: purple;  
+}
+
+form{
+	
+
+}
+
+.formContainer{
+	margin-top: 50px;
+	margin-left: 100px;
+	background-color: white;
+
+}
+
+/*#formHolder{
+	display: hidden;
+}*/
 
