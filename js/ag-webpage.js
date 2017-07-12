@@ -1,4 +1,31 @@
 
+function loadBody(){
+	if(film == 1){
+		// $('#bodySpot').html(callHome());
+		//console.log(callHome())
+		$('#homeSpot').show();
+		$('#filmSpot').hide();
+
+		//hide forms
+		$('#deleteCont').hide();
+		$('#addFilmCont').hide();
+		$('#newDirectorCont').hide();
+
+	}else {
+		// $('#bodySpot').html(callFilm());
+		// //console.log(callFilm())
+		$('#filmSpot').show();
+		$('#homeSpot').hide();
+	}
+
+}
+
+loadBody();
+
+
+
+
+
 $( function() {
     $( "#accordion" ).accordion({
       collapsible: true
@@ -223,26 +250,26 @@ $('#addDirectorButton').click(function(){
 		//MUST LOAD FORMS INTO VARIABLES
 
 
-		var newDirectorCont = $('#newDirectorCont');
+		// var newDirectorCont = $('#newDirectorCont');
 
 
 
-		var  addFilmCont = $('#addFilmCont');
+		// var  addFilmCont = $('#addFilmCont');
 
-		var deleteCont = $('#deleteCont');
+		// var deleteCont = $('#deleteCont');
 
 
 
 
 $('#addDirectorDrop').click(function(){
 	// var bla = $('#filmName').val();
-	console.log("addDirectorDrop clicked");
-	console.log($('#newDirectorCont'));
+	// console.log("addDirectorDrop clicked");
+	// console.log($('#newDirectorCont'));
 
-	$('#formSpot').html(newDirectorCont);
-	
-
-
+	// $('#formSpot').html(newDirectorCont);
+	$('#newDirectorCont').show();
+	$('#deleteCont').hide();
+	$('#addFilmCont').hide();
 
 		
 	});
@@ -251,12 +278,13 @@ $('#addDirectorDrop').click(function(){
 
 $('#addFilmDrop').click(function(){
 	// var bla = $('#filmName').val();
-	console.log("addFilmDrop clicked");
-	console.log($('#addFilmCont'));
+	// console.log("addFilmDrop clicked");
+	// console.log($('#addFilmCont'));
 
-	$('#formSpot').html(addFilmCont);
-	
-
+	// $('#formSpot').html(addFilmCont);
+	$('#addFilmCont').show();
+	$('#newDirectorCont').hide();
+	$('#deleteCont').hide();
 
 
 		
@@ -265,10 +293,13 @@ $('#addFilmDrop').click(function(){
 
 $('#deleteDrop').click(function(){
 	// var bla = $('#filmName').val();
-	console.log("deleteDrop clicked");
-	console.log($('#deleteCont'));
+	// console.log("deleteDrop clicked");
+	// console.log($('#deleteCont'));
 
-	$('#formSpot').html(deleteCont);
+	// $('#formSpot').html(deleteCont);
+	$('#deleteCont').show();
+	$('#addFilmCont').hide();
+	$('#newDirectorCont').hide();
 	
 
 
