@@ -1,5 +1,6 @@
 
 function loadBody(){
+	$('#formSpotMessage').html("");
 	if(film == 1){
 		// $('#bodySpot').html(callHome());
 		//console.log(callHome())
@@ -31,11 +32,13 @@ $( function() {
       collapsible: true
     });
   } );
-
+//'About ' + film.director.name
 
 function insertContent(){
+	console.log();
+	$('#formSpotMessage').html("");
 	$('#summary').html(film.summary);
-	$('#directorName').html('About ' + film.director.name);
+	$('#directorName').html("About " + film.director.name);
 	$('#aboutDirector').html(film.director.about);
 	$('#cast').html(film.cast);
 	$('#filmBannerTitle').html(film.name);
@@ -109,6 +112,7 @@ function loadDirectorsSelect(){
 				dirList += "<option value=" +" ' "+ directors[i].name + " ' "+ ">" + directors[i].name + "</option>";
 
 			}
+			dirList +='<option value="" disabled selected>Director</option>'
 			$('.directorSelectList').html(dirList);
 			// console.log(dirList);
 		};
@@ -117,9 +121,10 @@ function loadfilmSelect(){
 			var filmList ='';
 			// console.log(dirList);
 			for(var i = 0; i < films.length; i++){
-				filmList += "<option value=" + i + ">" + films[i].name + "</option>";
+				filmList += "<option value=" +" ' "+ films[i].name + " ' "+ ">" + films[i].name + "</option>";
 
 			}
+			filmList +='<option value="" disabled selected>Film</option>'
 			$('.filmSelectList').html(filmList);
 			// console.log(filmList);
 		};
@@ -192,6 +197,7 @@ loadDeleteLists();
 $('#addFilmButton').click(function(){
 	// var bla = $('#filmName').val();
 	console.log("button clicked");
+	$('#formSpotMessage').html("");
 	
 		var filmFromForm ={
 			name: $('#filmName').val() ,
@@ -215,14 +221,26 @@ $('#addFilmButton').click(function(){
 			console.log(filmFromForm);
 
 
-			//.POST  DIRECTOR 	HERE
+			//.POST  FILM	HERE
+
+	$.post(serverUrl+"new-film", filmFromForm, function(data){
+	 		 	
+
+	 		 	
+
+	 		 	insertContent();
+	 		 });
 		
+	//MESSAGE FORM	
+	$('#formSpotMessage').html("FORM SENT");
+
 	}
 );
 
 $('#addDirectorButton').click(function(){
 	// var bla = $('#filmName').val();
 	console.log("button clicked");
+	$('#formSpotMessage').html("");
 	
 		var directorFromForm ={
 			name: $('#directorName').val() ,
@@ -233,40 +251,62 @@ $('#addDirectorButton').click(function(){
 			$('#about').val('') ,
 		console.log(directorFromForm);
 
+
+
 	//.POST  DIRECTOR 	HERE
 
 
+	$.post(serverUrl+"new-director", directorFromForm, function(data){
+	 		 	
 
-	//CLEAR FORM	
-	$('#formSpot').html("FORM SENT");		
+	 		 	
+	 		 	insertContent();
+	 		 });
+
+
+
+	//MESSAGE FORM	
+	$('#formSpotMessage').html("FORM SENT");
+
 	}
 );
 
 
+$('#deleteButton').click(function(){
+	// var bla = $('#filmName').val();
+	
+	$('#formSpotMessage').html("");
+	var filmToDel= $('#filmSelect').val()
+	var directorToDel= $('#directorsDelete').val()  
+		
+	console.log($('#filmSelect').val());
+	console.log($('#directorsDelete').val());
+	console.log(filmToDel);
+	console.log(directorToDel);
+
+	
+			//.POST  FILM	HERE
+	var stuffToDelete ={filmDel: filmToDel, directorDel: directorToDel};
+
+	console.log("object created");
+	$.post(serverUrl+"delete", stuffToDelete, function(data){
+	 		 	console.log("posted");
+	 		 	insertContent();
+	 		 });
+		
+	//MESSAGE FORM	
+	$('#formSpotMessage').html("FORM SENT");
+
+	}
+);
 
 
-		//DROPDOWN BUTTONS
-
-		//MUST LOAD FORMS INTO VARIABLES
-
-
-		// var newDirectorCont = $('#newDirectorCont');
-
-
-
-		// var  addFilmCont = $('#addFilmCont');
-
-		// var deleteCont = $('#deleteCont');
-
+		
 
 
 
 $('#addDirectorDrop').click(function(){
-	// var bla = $('#filmName').val();
-	// console.log("addDirectorDrop clicked");
-	// console.log($('#newDirectorCont'));
-
-	// $('#formSpot').html(newDirectorCont);
+	$('#formSpotMessage').html("");
 	$('#newDirectorCont').show();
 	$('#deleteCont').hide();
 	$('#addFilmCont').hide();
@@ -277,11 +317,7 @@ $('#addDirectorDrop').click(function(){
 
 
 $('#addFilmDrop').click(function(){
-	// var bla = $('#filmName').val();
-	// console.log("addFilmDrop clicked");
-	// console.log($('#addFilmCont'));
-
-	// $('#formSpot').html(addFilmCont);
+	$('#formSpotMessage').html("");
 	$('#addFilmCont').show();
 	$('#newDirectorCont').hide();
 	$('#deleteCont').hide();
@@ -292,11 +328,7 @@ $('#addFilmDrop').click(function(){
 
 
 $('#deleteDrop').click(function(){
-	// var bla = $('#filmName').val();
-	// console.log("deleteDrop clicked");
-	// console.log($('#deleteCont'));
-
-	// $('#formSpot').html(deleteCont);
+	$('#formSpotMessage').html("");
 	$('#deleteCont').show();
 	$('#addFilmCont').hide();
 	$('#newDirectorCont').hide();

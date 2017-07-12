@@ -178,6 +178,7 @@
 			                      </ul>
 			                </div>
 			                <div id="formSpot">
+			                	<div id="formSpotMessage"></div>
 			                	<div id="formHolder">
 									<div class ="formContainer" id='newDirectorCont'>
 
@@ -202,8 +203,7 @@
 
 											<h3>New Film</h3>
 											<select id = "directorSelect" name="directorsSelect" class="directorSelectList">
-												<option value="" selected="selected">Director</option>
-
+																																				
 												<!-- <div class="directorSelectList"></div> -->
 							  				</select>
 
@@ -242,7 +242,7 @@
 
 											<h3>Delete Film or Director</h3>
 											<!-- name is how the infromation will be identidfied when you get data from the form -->
-									        <select name="directorsSelect" class="directorSelectList">
+									        <select id="directorsDelete" name="directorsDelete" class="directorSelectList">
 												<option value="" selected="selected">Director</option>
 										
 							  				</select>
@@ -251,7 +251,7 @@
 											<p>and/or</p>
 											
 
-											<select name="filmSelect" class="filmSelectList">
+											<select id="filmSelect" name="filmSelect" class="filmSelectList">
 												<option value="" selected="selected">Film</option>
 
 												
@@ -291,7 +291,7 @@
 		  <p id="summary"></p>
 		 </div>
 
-		 <h3 id="directorName"></h3>
+		 <h3 id="directorName" ></h3>
 
 		  <div>
 		  <p id="aboutDirector"></p>
@@ -318,14 +318,6 @@
 			<div class="timelineSpot col-xs-12">
 				
 			</div>
-
-
-
-
-	
-
-
-
 
 
 
@@ -359,9 +351,7 @@
 	<!--     INSERT NAVBAR -->
 	<script type="text/javascript" src="js/nav.js"></script>
 
-	<!--     CALL HOME -->
-	<!-- <script type="text/javascript" src="js/body.js"></script> -->
-
+	
 	<!--     INSERT TIMELINE -->
 	<script type="text/javascript" src="js/timeline.js"></script>
 
