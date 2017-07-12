@@ -242,44 +242,46 @@ form{
 
 }
 
-.formContainer{
-	margin-top: 50px;
-	margin-left: 100px;
-	background-color: white;
+	.formContainer{
+		margin-top: 50px;
+		margin-left: 100px;
+		background-color: white;
 
-}
+	}
+
+
+	#formHolder{
+		display: none;
+	}
+
 select {
 	margin-top: 20px;
 	margin-bottom:20px;
 
 }
 
-form p{
-	display: block;
-	clear:both;
+	form p{
+		display: block;
+		clear:both;
 
-}
+	}
 
 
-form textarea{
-	display: block;
-	clear:both;
-	float:center;
+	form textarea{
+		display: block;
+		clear:both;
+		float:center;
 
-}
+	}
 
-form div{
-	display: block;
-	clear:both;
-}
+	form div{
+		display: block;
+		clear:both;
+	}
 
-form button{
-	display: block;
-	clear:both;
+	form button{
+		display: block;
+		clear:both;
 
-}
-
-/*#formHolder{
-	display: hidden;
-}*/
+	}
 

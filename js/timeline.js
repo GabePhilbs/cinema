@@ -126,9 +126,12 @@ $.get(serverUrl+"films", function(data){
 	 		
 	 	// });
 	 		
+
+
 	 		console.log(film);
+	 		var justtest =film.director;
 	 		//WHY THE HELL IS THIS POST NOT WORKING?!!!?!?!
-	 		 $.post(serverUrl+"this-director", { name: film.director}, function(data){
+	 		 $.post(serverUrl+"this-director", {director: justtest}, function(data){
 	 		 	
 
 	 		 	console.log(data);

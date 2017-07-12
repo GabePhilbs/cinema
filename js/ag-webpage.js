@@ -188,10 +188,7 @@ $('#addFilmButton').click(function(){
 			console.log(filmFromForm);
 
 
-			// $.post("", function( filmFromForm ) {
-  			// 		$( ".result" ).html( data );
-
-			// });
+			//.POST  DIRECTOR 	HERE
 		
 	}
 );
@@ -209,11 +206,75 @@ $('#addDirectorButton').click(function(){
 			$('#about').val('') ,
 		console.log(directorFromForm);
 
-		
+	//.POST  DIRECTOR 	HERE
+
+
+
+	//CLEAR FORM	
+	$('#formSpot').html("FORM SENT");		
 	}
 );
 
 
+
+
+		//DROPDOWN BUTTONS
+
+		//MUST LOAD FORMS INTO VARIABLES
+
+
+		var newDirectorCont = $('#newDirectorCont');
+
+
+
+		var  addFilmCont = $('#addFilmCont');
+
+		var deleteCont = $('#deleteCont');
+
+
+
+
+$('#addDirectorDrop').click(function(){
+	// var bla = $('#filmName').val();
+	console.log("addDirectorDrop clicked");
+	console.log($('#newDirectorCont'));
+
+	$('#formSpot').html(newDirectorCont);
+	
+
+
+
+		
+	});
+
+
+
+$('#addFilmDrop').click(function(){
+	// var bla = $('#filmName').val();
+	console.log("addFilmDrop clicked");
+	console.log($('#addFilmCont'));
+
+	$('#formSpot').html(addFilmCont);
+	
+
+
+
+		
+	});
+
+
+$('#deleteDrop').click(function(){
+	// var bla = $('#filmName').val();
+	console.log("deleteDrop clicked");
+	console.log($('#deleteCont'));
+
+	$('#formSpot').html(deleteCont);
+	
+
+
+
+		
+	});
 
 
 
