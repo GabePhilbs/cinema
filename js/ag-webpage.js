@@ -79,7 +79,7 @@ function loadDirectorsSelect(){
 			var dirList ='';
 			// console.log(dirList);
 			for(var i = 0; i < directors.length; i++){
-				dirList += "<option value=" + i + ">" + directors[i].name + "</option>";
+				dirList += "<option value=" +" ' "+ directors[i].name + " ' "+ ">" + directors[i].name + "</option>";
 
 			}
 			$('.directorSelectList').html(dirList);
@@ -107,7 +107,7 @@ function loadFilmForm(){
 
 }
 
-$.get("http://localhost:8080/directors",
+$.get(serverUrl+"directors",
 		function(data)
 		{ 
 		 	 directors = data;
@@ -119,7 +119,7 @@ $.get("http://localhost:8080/directors",
 );
 
 function loadDeleteLists(){
-	$.get("http://localhost:8080/directors",
+	$.get(serverUrl+"directors",
 			function(data)
 			{ 
 			 	directors = data;
@@ -130,7 +130,7 @@ function loadDeleteLists(){
 	}
 	);
 
-	$.get("http://localhost:8080/films",
+	$.get(serverUrl+"films",
 			function(data)
 			{ 
 			 	 var films = data;

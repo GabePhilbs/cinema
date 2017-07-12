@@ -1,3 +1,10 @@
+
+
+// switch between live server and local -- change url of DB
+// var serverUrl ="localhost:5000/"
+var serverUrl = "https://cine-server-dev.herokuapp.com/"
+
+
 //<!--  getting arrays -->
 	var directors =[]
 
@@ -10,7 +17,7 @@
 	 	}
 
 
-		 $.get("http://localhost:8080/directors",
+		 $.get(serverUrl+"directors",
 		function(data)
 		{ 
 		 
@@ -32,7 +39,7 @@
 
 	 var films =[];
 	 function loadFilms(){
-	 	$.get("http://localhost:8080/films", function(data){  
+	 	$.get(serverUrl+"films", function(data){  
 	 		films = data; 
 	 		//console.log(films);	 		
 	 		return data;
@@ -43,3 +50,4 @@
 	}
 	  
 	  loadFilms();
+
