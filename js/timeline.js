@@ -131,15 +131,15 @@ $.get(serverUrl+"films", function(data){
 	 		console.log(film);
 	 		var justtest =film.director;
 	 		//WHY THE HELL IS THIS POST NOT WORKING?!!!?!?!
-	 		 $.post(serverUrl+"this-director", {director: justtest}, function(data){
+	 		 $.post(serverUrl+"this-director", film, function(data){
 	 		 	
 
-	 		 	console.log(data);
-	 		 	console.log(data[0]);
+	 		 	// console.log(data);
+	 		 	// console.log(data[0]);
 
 	 		 	film.director = data[0];
-	 		 	console.log(film.director);
-	 		 	console.log(film.director.name);
+	 		 	// console.log(film.director);
+	 		 	// console.log(film.director.name);
 
 	 		 	insertContent();
 	 		 });
