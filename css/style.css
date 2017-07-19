@@ -6,7 +6,7 @@ body {
 /*Navbar styles
 */
 .navbar{
-	width: 100%;
+	/*width: 100%;*/
 	margin: 0;
 	padding:0;
 	/* color scheme 1*/
@@ -15,14 +15,25 @@ body {
 	background: rgba(47, 47, 47, 0.82);
 	color: white;
 	
-
-
 }
+
+.navbar-bg-custom{
+	border:none;
+}
+
+.navbar-form{
+	margin:0;
+	padding: 0;
+	margin-right: 10px;
+}
+
+
 .top-container{
 	background-color: black;
 	width:100%;
 	margin:0;
 	padding: 0;
+
 
 
 }
@@ -33,6 +44,10 @@ body {
 	
 }
 .top-row a{
+	visibility: hidden;
+	
+}
+.top-row form{
 	visibility: hidden;
 	
 }
@@ -280,5 +295,9 @@ select {
 		display: block;
 		clear:both;
 
+	}
+
+	.ngTimelineItem {
+		color: #C0C0C0;
 	}
 

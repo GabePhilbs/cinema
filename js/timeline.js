@@ -1,5 +1,7 @@
 // console.log('Geronimo!!! (calltimeline has been called)');
 
+
+
 function calltimeline(){    
 	
 	//test if this function is getting called
@@ -20,13 +22,11 @@ function calltimeline(){
 		       timeline +="<h2 class='timeline-time '>"+ i +"'s</h2>"
 
 		             timeline +='<dl class="timeline-series '+ n +'">'
-		          	
-		          	
-   			               
-						                  
-
+	          			
 		                timeline +='</dl>'
 		        timeline +='</div>'
+
+		        $('dl.' + n).html('');
 		    }
 
  return timeline;}
@@ -40,28 +40,48 @@ function calltimeline(){
 
  	//replace this with .get when the array becomes html
 
-
+function populateTimeline(){
 
 $.get(serverUrl+"films", function(data){
 	films = data;
 	// console.log(films);
-	for(var i =0; i< films.length; i++){
+	for(var i =0; i< 9; i++){
 		//get a decade from the loop
 		var dec = 1930+ (i*10);
 		//turn it to string
 		var n = dec.toString();
 		//crete content to input
 		var insert =''
-	insert +='<dt class="timeline-event" id="event03"><a href="#pageTop" class="smoothScroll timelineLink">' + films[i].name + '</a></dt>'
-        insert +='<dd class="timeline-event-content" id="event01EX">'
-               insert +=' <p>Content about the event goes here.</p>'
-       insert +=' </dd>'
+		// console.log(dec);
+		// console.log(films);
+		// console.log(n);
+		for(var t =0; t<films.length; t++){
+			// console.log(" second for runs");
 
-       // console.log(n);
-       // console.log(insert);
-       // console.log(films[i].name);
-       //append to right decade
-       $('.'+ dec).append(insert);
+		
+
+			// console.log(" second for runs");
+			// console.log(films[t]);
+			// console.log(films[t] == n);
+			if(n == films[t].decade){
+
+				// console.log(' approved' );
+				// console.log(films[t]);
+
+				insert =''
+				insert +='<dt class="timeline-event" id="event03"><a href="#pageTop" class="smoothScroll timelineLink">' + films[t].name + '</a></dt>'
+			        insert +='<dd class="timeline-event-content" id="event01EX">'
+			               insert +=' <p>Content about the event goes here.</p>'
+			       insert +=' </dd>'
+
+			       // console.log(n);
+			       // console.log(insert);
+			       // console.log(films[i].name);
+			       //append to right decade
+			       $('.'+ dec).append(insert);
+			}
+
+		}
        }
        //href="#pageTop"
        //smoothScroll 
@@ -108,7 +128,7 @@ $.get(serverUrl+"films", function(data){
 
 
 	 		// console.log(film);
-	 		var justtest =film.director;
+	 		
 	 		//WHY THE HELL IS THIS POST NOT WORKING?!!!?!?!
 	 		 $.post(serverUrl+"this-director", film, function(data){
 	 		 	
@@ -141,7 +161,41 @@ $.get(serverUrl+"films", function(data){
        //smooth scroll was not running so I called it from here
        runSmoothScroll();
 
+       //load directors into films
+
+      //  var filmLoadDir ={};
+
+      //  for(var k = 0; k < films. length; k++){
+
+      //  		filmLoadDir = films[k]
+
+	     //   	$.post(serverUrl+"this-director", filmLoadDir, function(data){
+		 		 	
+
+		 		 // 	// console.log(data);
+		 		 // 	// console.log(data[0]);
+
+		 		 // 	filmLoadDir.director = data[0];
+		 		 // 	// console.log(film.director);
+		 		 // 	// console.log(film.director.name);
+
+		 		 	
+		 		 // });
+
+
+      //  }
+
 });
 			
+};
+
+populateTimeline();
+
+function refreshTimeline(){
+	calltimeline();
+	populateTimeline();
+
+};
+
 
 

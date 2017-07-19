@@ -23,7 +23,11 @@ function loadBody(){
 
 loadBody();
 
+$('#homeButton').click(function(){
+	film = 1;
+	loadBody();
 
+})
 
 
 
@@ -35,10 +39,16 @@ $( function() {
 //'About ' + film.director.name
 
 function insertContent(){
-	console.log();
+	console.log(film.director);
 	$('#formSpotMessage').html("");
 	$('#summary').html(film.summary);
-	$('#directorName').html("About " + film.director.name);
+	console.log($('#directorName'));
+	// $('#directorName').html("About " + film.director.name);
+		// console.log(film);
+		// console.log(film.director);
+		// console.log(film.director.name);
+		// console.log(film.director.about);
+
 	$('#aboutDirector').html(film.director.about);
 	$('#cast').html(film.cast);
 	$('#filmBannerTitle').html(film.name);
@@ -66,39 +76,6 @@ else {
 };
 
 
-//test if the film is being selected
-// console.log(film.summary);
-// console.log( film.director.name);
-// console.log(film.director.about);
-// console.log(#summary);
-
-
-
-
-//FORM STUFF
-
-
-//insert forms in DOM HAVING TROUBLE WITH CHROME AUTHORIZATION
-
-// $.ajax({
-//     url: "forms.html",
-//     success: function (data) { $('#formSpot').append(data); },
-//     dataType: 'html'
-// });
-
-// //populate directors options
-
-// function popDirSelect(){
-// 	var dirOptions = '';
-
-// 	for(var i = 0 ; i< directors.length; i++){
-
-// 		dirOptions += "<option value=" + directors[i].name + ">" + director[i].name + "</option>"
-
-// 		$('#directorSelect').html(dirOptions);	
-// 	}
-		
-// }				
 
 
 
@@ -109,7 +86,7 @@ function loadDirectorsSelect(){
 			var dirList ='';
 			// console.log(dirList);
 			for(var i = 0; i < directors.length; i++){
-				dirList += "<option value=" +" ' "+ directors[i].name + " ' "+ ">" + directors[i].name + "</option>";
+				dirList += "<option value=" +"'"+ directors[i].name + "'"+ ">" + directors[i].name + "</option>";
 
 			}
 			dirList +='<option value="" disabled selected>Director</option>'
@@ -121,7 +98,7 @@ function loadfilmSelect(){
 			var filmList ='';
 			// console.log(dirList);
 			for(var i = 0; i < films.length; i++){
-				filmList += "<option value=" +" ' "+ films[i].name + " ' "+ ">" + films[i].name + "</option>";
+				filmList += "<option value=" +"'"+ films[i].name + "'"+ ">" + films[i].name + "</option>";
 
 			}
 			filmList +='<option value="" disabled selected>Film</option>'
@@ -227,12 +204,15 @@ $('#addFilmButton').click(function(){
 	 		 	
 
 	 		 	
-
+	 		 	console.log(data);
+	 		 	refreshTimeline();
 	 		 	insertContent();
 	 		 });
 		
 	//MESSAGE FORM	
 	$('#formSpotMessage').html("FORM SENT");
+
+	loadDeleteLists();
 
 	}
 );
@@ -259,7 +239,8 @@ $('#addDirectorButton').click(function(){
 	$.post(serverUrl+"new-director", directorFromForm, function(data){
 	 		 	
 
-	 		 	
+	 		 	console.log(data);
+	 		 	refreshTimeline();
 	 		 	insertContent();
 	 		 });
 
@@ -267,6 +248,8 @@ $('#addDirectorButton').click(function(){
 
 	//MESSAGE FORM	
 	$('#formSpotMessage').html("FORM SENT");
+
+	loadDeleteLists();
 
 	}
 );
@@ -279,23 +262,36 @@ $('#deleteButton').click(function(){
 	var filmToDel= $('#filmSelect').val()
 	var directorToDel= $('#directorsDelete').val()  
 		
-	console.log($('#filmSelect').val());
-	console.log($('#directorsDelete').val());
-	console.log(filmToDel);
-	console.log(directorToDel);
-
+	
 	
 			//.POST  FILM	HERE
 	var stuffToDelete ={filmDel: filmToDel, directorDel: directorToDel};
 
 	console.log("object created");
 	$.post(serverUrl+"delete", stuffToDelete, function(data){
-	 		 	console.log("posted");
+	 		 	
+	 		 	refreshTimeline();
 	 		 	insertContent();
+
 	 		 });
 		
 	//MESSAGE FORM	
 	$('#formSpotMessage').html("FORM SENT");
+	// $('#filmSelect').val()
+	// $('#directorsDelete').val() 
+
+
+	//clear selectors - NOT WORKING
+	$('#directorsDelete').change(function(){
+   		$('#directorsDelete').not(this).prop('selectedIndex',0);            
+	});
+
+	$('#filmSelect').change(function(){
+   		$('#filmSelect').not(this).prop('selectedIndex',0);            
+	});
+
+
+	loadDeleteLists();
 
 	}
 );
@@ -340,6 +336,8 @@ $('#deleteDrop').click(function(){
 	});
 
 
+
+runSmoothScroll();
 
 
 
