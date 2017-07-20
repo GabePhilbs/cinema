@@ -3,8 +3,27 @@
 -- to do
 
  	Angular Timeline:
- 		make clicking change the current film displayed
+ 		Make it load the film stuff and hide home stuff
  		Make smoothScroll run
  		Set font Sizes
- 	Using Angular to fix bugs
- 		Use angular todisplay data in the acordion
+
+
+
+
+
+ 	Accordion
+ 		Use angular to display data in the acordion
+ 		Fix the about.director whichis only working for the first firector on the list
+
+ 	Forms
+ 		Convert all forms into angular
+
+
+
+
+
+
+
+
+ 		done:
+ 		make clicking change the current film displayed

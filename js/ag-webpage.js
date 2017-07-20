@@ -39,25 +39,25 @@ $( function() {
 //'About ' + film.director.name
 
 function insertContent(){
-	console.log(film.director);
+	// console.log(film.director);
 	$('#formSpotMessage').html("");
 	$('#summary').html(film.summary);
-	console.log($('#directorName'));
+	// console.log($('#directorName'));
 	// $('#directorName').html("About " + film.director.name);
 		// console.log(film);
 		// console.log(film.director);
 		// console.log(film.director.name);
 		// console.log(film.director.about);
 
-	$('#aboutDirector').html(film.director.about);
-	$('#cast').html(film.cast);
-	$('#filmBannerTitle').html(film.name);
-	$('#filmBanner').css(
-		{
-			"background-image": 
-			"url('"+film.img+"')"
-		}
-		);
+	// $('#aboutDirector').html(film.director.about);
+	// $('#cast').html(film.cast);
+	// $('#filmBannerTitle').html(film.name);
+	// $('#filmBanner').css(
+	// 	{
+	// 		"background-image": 
+	// 		"url('"+film.img+"')"
+	// 	}
+	// 	);
 	// console.log(film.name);
 	// console.log(film.img);
 	
@@ -339,5 +339,10 @@ $('#deleteDrop').click(function(){
 
 runSmoothScroll();
 
+$("#accordion").accordion({ 
+
+heightStyle: "content" 
+
+});
 
 

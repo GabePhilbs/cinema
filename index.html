@@ -64,7 +64,7 @@
 <!-- beginning of the navbar block -->
 <body>
 		<!--  getting arrays -->
-		
+	<div class="accordionTitle" ng-app="cinemaApp" ng-controller="myctrl">
 
 
 		<!-- setting the var fil to the default value when loading the page -->
@@ -101,7 +101,7 @@
 		            	</form>
 		            </div>
 			</div>
-		</div>
+		</nav>
 
 		<!--NAVBAR BEGINS-->
 		<nav class="navbar navbar-default navbar-fixed-top container-fluid ">
@@ -139,6 +139,7 @@
 		</nav>
 		<a id="pageTop"></a>
 
+<!-- 		START OF HOME -->
 
 		<!-- Home html will be iserted here -->
 		<div id="homeSpot">
@@ -344,9 +345,15 @@
 
 
 					<!--END JUMBOTRON -->
+<!-- 
+					END OF HOME
+
+					START FILM -->
+
 		</div>
 		<!-- film body html will be iserted here -->
-		<div id="filmSpot">  <div class="jumbotron" id="filmBanner">
+		<div id="filmSpot">  <div class="jumbotron" id="filmBanner" class="modalContainer" 
+  ng-style="{'background-image': 'url(' + currentFilm.img + ')'}">
   <h1 id= "filmBannerTitle"> </h1>
   <!-- <p>...</p> -->
  </div>
@@ -356,26 +363,25 @@
  <!-- collapsible accordion start  -->
 		
 
-		 <div id="accordion" class="accordionTitle" >
+		 <div id="accordion"  >
+		 
+			  	<h3>Summary</h3>
 
-		  <h3>Summary</h3>
+				<div>
+				  	<p>{{currentFilm.summary}}</p>
 
-		  <div>
-		  <p id="summary"></p>
-		 </div>
+				</div>
 
-		 <h3 id="directorName" >test</h3>
+				<h3  >About {{currentFilm.director.name}}</h3>
+					
+				  		<p>{{currentFilm.director.about}}</p>  		
 
-		  <div>
-		  <p id="aboutDirector"></p>
-		  </div>
+				<h3>Cast</h3>
 
-		  <h3>Cast</h3>
-
-		  <div>
-		    <p id = "cast"></p>
-		  </div>
-
+				<div>
+				    <p>{{currentFilm.cast}}</p>
+				</div>
+			
 		 </div>
 
  <!-- collapsible accordion end  --></div>
@@ -392,29 +398,38 @@
 				
 			</div>
 
-		<!-- angular based timeline -->
+		<!-- ANGULAR TIMELINE -->
 		<div id="ngTimeline">
-			<div ng-app="cinemaApp" ng-controller="myctrl">
+			<!-- <div ng-app="cinemaApp" ng-controller="myctrl"> -->
 				<div ng-repeat ="x in decades">
 
 					<h1>{{x}}'s </h1>			
 					<div ng-repeat="y in films" >
 						<div ng-if= "y.decade == x">
-							<a href="#pageTop" class= "ngTimelineItem smoothScroll timelineLink" ng-click="changeFilm()">{{y.name}}</a>
+							<a href="#pageTop" class= "ngTimelineItem smoothScroll timelineLink" ng-click="changeFilm(y)">{{y.name}}</a>
 						</div>
 					</div>
 
 				</div>
 
-			</div>
+			<!-- </div> -->
 
 		</div>
-		<!-- creating angular based timeline functions-->
+
+
+			<!-- END OF FILM DISPLAY -->
+
+
+		<!-- this div closes the app call -->
+		</div>
+		<!-- creating angular functions-->
 		<script>
+		// STARTING ANGULAR
 			var app = angular.module("cinemaApp", []);
 
 			app.controller("myctrl", function($scope, $http){
 
+				// TIMELINE
 
 				$http.get("https://cine-server-dev.herokuapp.com/films").then(function(response){
 					
@@ -423,17 +438,41 @@
 				})
 
 
-			$scope.decades = [1930,1940,1950,1960,1970,1980,1990,2000,2010]
-				
-			$scope.changeFilm =function(){
-				
-			}
 
+				$http.get("https://cine-server-dev.herokuapp.com/directors").then(function(response){
+					
+					$scope.directors = response.data;
+					// the .data part is to get just the body with no headers
+					
+				})
 
-			})
 			
 
 
+			$scope.decades = [1930,1940,1950,1960,1970,1980,1990,2000,2010]
+				
+			
+			//FILM PAGE CONTENT
+			$scope.changeFilm =function(clickedFilm){
+
+				$scope.currentFilm = clickedFilm;
+				for(var i =0; i < directors.length; i++){
+					
+					if(directors[i].name == $scope.currentFilm.director ){
+						
+						$scope.currentFilm.director = directors[i];
+					}
+				}
+				console.log($scope.currentFilm);
+			}
+
+			//FORM STUFF
+
+
+			});
+			
+
+			
 
 		</script>
 
@@ -474,6 +513,8 @@
 
 	<!-- custom script -->
 	<script type="text/javascript" src="js/ag-webpage.js"></script>
+	
+	
 
 </body>
 </html>
